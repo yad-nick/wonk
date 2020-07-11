@@ -1,0 +1,32 @@
+body{
+    font-family: Roboto;
+    margin:0;
+    background: #343233;
+}
+.toggle-btn{
+    text-decoration: none;
+    text-align: center;
+    color:#FFD152;
+}
+button{
+    outline: none;
+    border: none;
+    margin: 18px 102px;
+    padding: 20px 40px;
+    background: #FFD152;
+    font-family: Roboto;
+    color: #282627;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-transform: uppercase;
+    
+}
+h2{
+    text-align: center;
+    color: #8D8273;
+}
+p{
+    text-align: center;
+    color:#8D8273;
+}
+

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>PROTOTYPE-4</title>
+        <!---css--->
+        <link rel="stylesheet" href="style.css">
+        
+        <!---google fonts --->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"rel="stylesheet">
+        
+        <!--jquery--->
+       
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+       
+       <!----font awesome icons--->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body>
+        
+        <header>
+            <nav class="menu">
+                <ul class="menu">
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#overview">Overview</a>
+                    </li>
+                    <li>
+                        <a href="#download">Download</a>
+                    </li>
+                    <li>
+                        <a href="#features">Features</a>
+                    </li>
+                </ul>
+                <a href="#" id="toggle-btn" style="color:#FFD152">WONK</a>
+            </nav>
+        </header>
+        
+        <!-- content --->
+        
+        <a name="home"></a>
+        <div class="section-hero">
+            <div class="container">
+                <h1>WONK</h1>
+                <h2><i class="fa fa-book" aria-hidden="true" style="color: #FFD152"></i>Debug Yourself</h2><br><br>
+                <h3 style="text-transform: capitalize">find your<span style="color:#FFD152"> PDF</span>!</h3>
+            </div>
+        </div>
+        
+        <!----overview section ----->
+        
+        <a name="overview"></a>
+        <div id="overview" class="section">
+            <div class="container">
+                <div class="overview-content">
+                    <div>
+                        <h3>
+                    <i class="fa fa-book"></i>OVERVIEW
+                </h3>
+                        <p>This Website is created for all the students searching for good books on programming languages.You will find the PDF 
+                        version of the books regarding the programming languages.</p>
+                        <p>This E-books can be used as a reference for your doubts regarding computer languages.</p>
+                        
+                        <!---<button type="button">View More</button>--->
+                        <button onclick="document.location='#download'">View More</button>
+                    </div>
+                    <div>
+                       <!-- <img src="pic.jpg" alt="iMAGE"> --->
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!---about section ---->
+        <a name="download"></a>
+        <div id="about" class="section">
+            <div class="container">
+                <h2>
+                    <i class="fa fa-book"></i>downloads
+                </h2>
+                <h3>What will you find here ?</h3><br>
+                <div class="container">
+                    <div class="cols">
+                        <div class="col-sm-4">
+                            <button onclick="document.location='javascript.html'">JAVASCRIPT</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button onclick="document.location='python.html'">PYTHON</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button onclick="document.location='java.html'">JAVA</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button onclick="document.location='c.html'">C & C++</button>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        
+        <!--features--->
+                       
+         <a name="features"></a>
+        <div id="features" class="section">
+            <div class="container">
+               <h3>
+                    <i class="fa fa-book"></i>FEATURES
+                </h3>
+                
+                <div class="features-content">
+                    <div>
+                      <!---  <img src="pic.jpg" alt="iMAGE"> --->
+                    </div>
+                    <div>
+                        <h4>This PDF versions of the books are available for Free.</h4>
+                        <h4>How To Download?</h4>
+                        
+                        <h4><i class="fa fa-book"></i>
+                        Select the Programming Language</h4>
+                        <p></p>
+                        <h4><i class="fa fa-book"></i>
+                        Select your Preffered e-book</h4>
+                        <p></p>
+                        <h4><i class="fa fa-book"></i>
+                        Click on Download Button and wait for your Browser to start the download</h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--- download--->
+        
+        <div id="subscribe" class="section">
+            <div class="container">
+                <h2>Subscribe To Our Newsletter</h2><hr>
+                <p>This is a Beta version of the Website.</p>
+                <h3><i class="fa fa-like"></i>Subscribe feature will be available soon.</h3>
+                <input type="text" placeholder="Enter Your Email">
+                <br>
+                <button type="button">Notify Me</button>
+            </div>
+        </div>
+        
+        <footer>
+            <span>created by <span style="color: #FFD152">yadnik</span></span>
+        </footer>
+        
+      <!---  <script src="script.js"></script>---->
+      <script type="text/javascript">
+      $(function(){
+    menu = $('nav ul');
+    
+    $('#toggle-btn').on('click', function(e){
+        e.preventDefault();
+        menu.slideToggle();
+    });
+    
+    $(window).resize(function() {
+        var w = $(this).width();
+        if(w > 580 && menu.is(':hidden')) {
+            menu.removeAttr('style');
+        }
+    });
+    
+    $('nav li').on('click', function(e) {
+        var w = $(window).width();
+        if(w < 580) {
+            menu.slideToggle();
+                
+        }
+    });
+    $('.open-menu').height($(window).height());
+});
+
+
+// smooth scrolling
+
+$('a[href*="#"]')
+    .not('[href="#download"]')
+    .not('[href-"#feature"]')
+     .click(function(event){
+    if(
+    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+    &&
+        location.hostname == this.hostname
+){
+       var target = $(this.hash);
+      target = target.length ? target : $('[name=]' + this.hash.slice(1) + ']');
+if (target.length) {
+    event.preventDefault();
+    $('html, body').animate({
+        scrollTop: target.offset().top
+    }, 1000, function() {
+        var $target = $(target);
+        $target.focus();
+        if($target.is(":focus")) {
+            return false;
+        }else{
+            $target.attr('tabindex', '-1');
+            $target.focus();
+        };
+    });
+}
+    }
+
+});
+        </script>
+    </body>
+</html>
+
+
+
+
